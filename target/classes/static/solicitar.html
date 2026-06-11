@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Solicitação — Observa Ação</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/solicitar.css">
+</head>
+<body>
+  <main class="container solicitar-layout">
+    <div class="page-header">
+      <a href="home.html" class="back-link">← Voltar</a>
+      <h1>Nova Solicitação</h1>
+      <p class="section-sub">Denúncias e pedidos vão direto para a triagem da vigilância sanitária.</p>
+    </div>
+
+    <div class="solicitar-card card">
+      <form id="novaForm" novalidate>
+        <div class="field">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" required>
+            <option value="">Carregando categorias…</option>
+          </select>
+          <span class="hint" id="prioridadeHint"></span>
+        </div>
+        <div class="field">
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" placeholder="Descreva o problema ou pedido com detalhes" required></textarea>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="bairro">Bairro</label>
+            <input id="bairro" type="text" required>
+          </div>
+          <div class="field">
+            <label for="endereco">Endereço</label>
+            <input id="endereco" type="text" required>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Enviar solicitação</button>
+        <p class="form-msg" id="novaMsg"></p>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/solicitar.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início — Observa Ação</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <!-- O cabeçalho com avatar é injetado por profile.js -->
+  <main class="container home-grid">
+    <section class="card">
+      <h2>Nova solicitação</h2>
+      <p class="section-sub">Denúncias e pedidos vão direto para a triagem da vigilância sanitária.</p>
+
+      <form id="novaForm" novalidate>
+        <div class="field">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" required>
+            <option value="">Carregando categorias…</option>
+          </select>
+          <span class="hint" id="prioridadeHint"></span>
+        </div>
+        <div class="field">
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" placeholder="Descreva o problema ou pedido" required></textarea>
+        </div>
+        <div class="field">
+          <label for="bairro">Bairro</label>
+          <input id="bairro" type="text" required>
+        </div>
+        <div class="field">
+          <label for="endereco">Endereço</label>
+          <input id="endereco" type="text" required>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Enviar solicitação</button>
+        <p class="form-msg" id="novaMsg"></p>
+      </form>
+    </section>
+
+    <section>
+      <h2>Solicitações recentes</h2>
+      <p class="section-sub">Acompanhe o andamento pelo número de protocolo.</p>
+      <ul id="listaSolicitacoes" class="solic-list">
+        <li class="card empty">Carregando…</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

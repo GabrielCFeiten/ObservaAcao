@@ -1,0 +1,89 @@
+/* solicitacoes.css — depende de global.css */
+
+.solicitacoes-layout {
+  padding-block: 40px;
+}
+
+.page-header { margin-bottom: 28px; }
+.page-header h1 { font-size: 28px; margin: 8px 0 4px; }
+
+.back-link {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--color3); text-decoration: none; }
+
+.section-sub { color: var(--ink-soft); font-size: 13px; }
+
+/* Filtros de status */
+.status-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.filter-btn {
+  padding: 7px 16px;
+  border: 2px solid var(--color3);
+  border-radius: 999px;
+  background: var(--color2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.filter-btn:hover { background: var(--lime-soft); }
+.filter-btn.active { background: var(--color1); }
+
+/* Lista de solicitações */
+.solic-list { display: flex; flex-direction: column; gap: 12px; }
+
+.solic-item {
+  border: 2px solid var(--color3);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--color2);
+  transition: background-color 0.2s ease;
+}
+.solic-item:hover { background: var(--cyan-soft); }
+
+.solic-item .row1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.solic-item .protocolo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+}
+.solic-item .categoria { font-weight: 600; font-size: 14px; }
+.solic-item .descricao {
+  color: var(--ink-soft);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 600px;
+}
+.solic-item .meta { color: var(--ink-soft); font-size: 13px; }
+
+.card.empty {
+  text-align: center;
+  color: var(--ink-soft);
+  border-style: dashed;
+  padding: 40px 24px;
+}
+
+@media (max-width: 600px) {
+  .solic-item .descricao { max-width: 100%; }
+}

@@ -1,0 +1,39 @@
+/* home.css — depende de global.css */
+.home-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 32px;
+  padding-block: 40px;
+  align-items: start;
+}
+.home-grid h2 { font-size: 22px; margin-bottom: 4px; }
+.section-sub { color: var(--ink-soft); font-size: 13px; margin-bottom: 20px; }
+
+.solic-list { display: flex; flex-direction: column; gap: 12px; }
+.solic-item {
+  border: 2px solid var(--color3);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--color2);
+}
+.solic-item .row1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.solic-item .protocolo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+}
+.solic-item .categoria { font-weight: 600; font-size: 14px; }
+.solic-item .meta { color: var(--ink-soft); font-size: 13px; }
+.card.empty { text-align: center; color: var(--ink-soft); border-style: dashed; }
+
+@media (max-width: 880px) {
+  .home-grid { grid-template-columns: 1fr; }
+}

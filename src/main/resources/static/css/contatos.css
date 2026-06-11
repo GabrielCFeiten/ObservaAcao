@@ -1,0 +1,86 @@
+/* contatos.css — depende de global.css */
+
+.contatos-layout {
+  padding-block: 40px;
+  max-width: 700px;
+}
+
+.page-header { margin-bottom: 32px; }
+.page-header h1 { font-size: 28px; margin: 8px 0 4px; }
+
+.back-link {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--color3); text-decoration: none; }
+
+.section-sub { color: var(--ink-soft); font-size: 13px; }
+
+.contatos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contato-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--color2);
+  border: 2px solid var(--color3);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+}
+
+.contato-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.contato-body { flex: 1; }
+
+.contato-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.contato-value {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.contato-value a {
+  color: var(--color3);
+  text-decoration: none;
+}
+.contato-value a:hover {
+  color: var(--color5);
+  text-decoration: underline;
+}
+
+.card.empty {
+  text-align: center;
+  color: var(--ink-soft);
+  border-style: dashed;
+  padding: 40px 24px;
+}
+
+.contatos-vazio {
+  color: var(--ink-soft);
+  font-style: italic;
+  text-align: center;
+  padding: 40px;
+  border: 2px dashed var(--color3);
+  border-radius: var(--radius);
+}
