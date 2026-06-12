@@ -1,0 +1,41 @@
+
+.mgmt-wrap {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 32px;
+  padding-block: 40px;
+  align-items: start;
+}
+.mgmt-wrap h2 { font-size: 22px; margin-bottom: 4px; }
+.section-sub { color: var(--ink-soft); font-size: 13px; margin-bottom: 20px; }
+
+.admin-list { display: flex; flex-direction: column; gap: 12px; }
+.admin-item {
+  border: 2px solid var(--color3);
+  border-radius: var(--radius);
+  background: var(--color2);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.admin-item .ad-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--color3);
+  background: var(--color4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.admin-item .ad-info { flex: 1; min-width: 0; }
+.admin-item .ad-nome { font-family: var(--font-display); font-weight: 700; font-size: 14px; }
+.admin-item .ad-login { color: var(--ink-soft); font-size: 13px; }
+.card.empty { text-align: center; color: var(--ink-soft); border-style: dashed; }
+
+@media (max-width: 880px) {
+  .mgmt-wrap { grid-template-columns: 1fr; }
+}

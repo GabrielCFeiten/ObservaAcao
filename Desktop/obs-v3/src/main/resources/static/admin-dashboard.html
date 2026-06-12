@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Gestor — Observa Ação</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/admin-dashboard.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <main class="container dash-grid">
+    <aside class="dash-side">
+      <section class="card card-hover" id="adminCard" title="Clique para editar sua conta">
+        <div class="admin-avatar" id="adminInitial">G</div>
+        <h3 id="adminNome">Gestor</h3>
+        <p class="muted">Gestor · Vigilância Sanitária</p>
+        <p class="hint-click">Clique para editar conta</p>
+      </section>
+
+      <section class="card card-hover" id="statsCard" title="Clique para ver a análise detalhada">
+        <h3>Visão geral</h3>
+        <div class="stat-row"><span>Total</span><strong id="statTotal">–</strong></div>
+        <div class="stat-row"><span>Urgentes</span><strong id="statUrgentes">–</strong></div>
+        <div class="stat-row"><span>Resolvidas</span><strong id="statResolvidas">–</strong></div>
+        <div class="mini-bar" id="miniBar" aria-hidden="true"></div>
+        <p class="hint-click">Clique para análise detalhada</p>
+      </section>
+
+      <section class="card" id="minhasMov" style="display:none">
+        <h3>Minhas movimentações</h3>
+        <p class="muted" style="font-size:12px;margin-bottom:10px">Solicitações que você já atualizou</p>
+        <ul class="col-list" id="minhasMovLista"></ul>
+      </section>
+    </aside>
+
+    <section class="dash-main">
+      <div class="filter-row" role="tablist" aria-label="Filtros rápidos">
+        <button class="filter-chip active" data-filter="TODOS">Todos</button>
+        <button class="filter-chip" data-filter="URGENTES">Urgentes</button>
+        <button class="filter-chip" data-filter="HOJE">Hoje</button>
+      </div>
+
+      <div class="columns" id="columns">
+        <div class="col" data-prio="ALTA">
+          <header class="col-head head-ALTA">Urgentes <span class="count" id="countALTA">0</span></header>
+          <ul class="col-list" id="colALTA"></ul>
+        </div>
+        <div class="col" data-prio="MEDIA">
+          <header class="col-head head-MEDIA">Médios <span class="count" id="countMEDIA">0</span></header>
+          <ul class="col-list" id="colMEDIA"></ul>
+        </div>
+        <div class="col" data-prio="BAIXA">
+          <header class="col-head head-BAIXA">Leves <span class="count" id="countBAIXA">0</span></header>
+          <ul class="col-list" id="colBAIXA"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="statsBackdrop">
+    <div class="modal" role="dialog" aria-labelledby="statsTitle">
+      <div class="modal-header">
+        <h3 id="statsTitle">Análise detalhada</h3>
+        <button class="modal-close" data-close aria-label="Fechar">&times;</button>
+      </div>
+      <h4 class="block-title">Gravidade</h4>
+      <div id="severityBars"></div>
+      <h4 class="block-title">Status do fluxo</h4>
+      <div id="statusBars"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="manageBackdrop">
+    <div class="modal modal-manage" role="dialog" aria-labelledby="manageTitle">
+      <div class="modal-header">
+        <h3 id="manageTitle">Solicitação</h3>
+        <button class="modal-close" data-close aria-label="Fechar">&times;</button>
+      </div>
+      <div id="manageInfo" class="manage-info"></div>
+
+      <h4 class="historico-title">Histórico de movimentações</h4>
+      <div id="manageHistorico" class="historico-lista"></div>
+
+      <h4 class="historico-title" style="margin-top:24px">Nova movimentação</h4>
+      <form id="manageForm" novalidate>
+        <div class="field">
+          <label for="novoStatus">Novo status</label>
+          <select id="novoStatus"></select>
+        </div>
+        <div class="field">
+          <label for="comentario">Comentário (justificativa)</label>
+          <textarea id="comentario" placeholder="Nota administrativa da movimentação" required></textarea>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Salvar movimentação</button>
+        <p class="form-msg" id="manageMsg"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

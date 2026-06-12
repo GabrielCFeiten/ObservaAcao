@@ -1,0 +1,33 @@
+
+
+.solicitar-layout {
+  padding-block: 40px;
+  max-width: 640px;
+}
+
+.page-header { margin-bottom: 32px; }
+.page-header h1 { font-size: 28px; margin: 8px 0 4px; }
+
+.back-link {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--color3); text-decoration: none; }
+
+.section-sub { color: var(--ink-soft); font-size: 13px; }
+
+.solicitar-card { padding: 32px; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .solicitar-card { padding: 20px; }
+}

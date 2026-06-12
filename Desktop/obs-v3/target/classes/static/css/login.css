@@ -1,0 +1,43 @@
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, var(--lime-soft) 0%, transparent 45%),
+    linear-gradient(315deg, var(--cyan-soft) 0%, transparent 45%),
+    var(--color2);
+}
+.auth-box { width: min(420px, 100%); }
+.auth-box .brand { display: block; margin-bottom: 24px; }
+.auth-box h1 { font-size: 28px; margin-bottom: 6px; }
+.auth-sub { color: var(--ink-soft); font-size: 14px; margin-bottom: 24px; }
+.auth-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+
+.dev-box {
+  margin-top: 22px;
+  padding: 14px;
+  border: 1.5px dashed var(--color5);
+  border-radius: var(--radius);
+  background: var(--cyan-soft);
+}
+.dev-tag {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color5);
+  margin-bottom: 10px;
+}
+.dev-actions { display: flex; gap: 8px; }
+.dev-actions .btn { flex: 1; }

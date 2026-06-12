@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administradores — Observa Ação</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/admin-management.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <main class="container mgmt-wrap">
+    <section class="card">
+      <h2>Criar novo administrador</h2>
+      <p class="section-sub">Cadastra o usuário e promove imediatamente para Gestor.</p>
+
+      <form id="newAdminForm" novalidate>
+        <div class="field">
+          <label for="naNome">Nome completo</label>
+          <input id="naNome" type="text" required>
+        </div>
+        <div class="field">
+          <label for="naCpf">CPF</label>
+          <input id="naCpf" type="text" inputmode="numeric" required>
+        </div>
+        <div class="field">
+          <label for="naTelefone">Telefone</label>
+          <input id="naTelefone" type="tel" required>
+        </div>
+        <div class="field">
+          <label for="naEmail">E-mail (login)</label>
+          <input id="naEmail" type="email" required>
+        </div>
+        <div class="field">
+          <label for="naSenha">Senha inicial</label>
+          <input id="naSenha" type="password" required>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Criar administrador</button>
+        <p class="form-msg" id="newAdminMsg"></p>
+      </form>
+    </section>
+
+    <section>
+      <h2>Administradores cadastrados</h2>
+      <p class="section-sub">Remover rebaixa o usuário para Cidadão (revoga privilégios).</p>
+      <ul id="adminList" class="admin-list">
+        <li class="card empty">Carregando…</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/admin-management.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas Solicitações — Observa Ação</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/solicitacoes.css">
+</head>
+<body>
+  <main class="container solicitacoes-layout">
+    <div class="page-header">
+      <a href="home.html" class="back-link">← Voltar</a>
+      <h1>Minhas Solicitações</h1>
+      <p class="section-sub">Clique em uma solicitação para ver os detalhes e o histórico.</p>
+    </div>
+
+    <div class="status-filters" id="statusFilters">
+      <button class="filter-btn active" data-status="TODOS">Todas</button>
+      <button class="filter-btn" data-status="ABERTO">Aberto</button>
+      <button class="filter-btn" data-status="TRIAGEM">Triagem</button>
+      <button class="filter-btn" data-status="EM_EXECUCAO">Em execução</button>
+      <button class="filter-btn" data-status="RESOLVIDO">Resolvido</button>
+      <button class="filter-btn" data-status="ENCERRADO">Encerrado</button>
+    </div>
+
+    <ul id="listaSolicitacoes" class="solic-list">
+      <li class="card empty">Carregando…</li>
+    </ul>
+  </main>
+
+  <div class="modal-backdrop" id="detalheBackdrop">
+    <div class="modal modal-wide" role="dialog" aria-labelledby="detalheTitle">
+      <div class="modal-header">
+        <h3 id="detalheTitle">Solicitação</h3>
+        <button class="modal-close" id="detalheClose" aria-label="Fechar">&times;</button>
+      </div>
+      <div id="detalheInfo" class="detalhe-info"></div>
+      <h4 class="historico-title">Histórico de movimentações</h4>
+      <div id="detalheHistorico" class="historico-lista"></div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/solicitacoes.js"></script>
+</body>
+</html>

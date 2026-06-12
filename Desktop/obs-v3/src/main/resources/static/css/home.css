@@ -1,0 +1,83 @@
+
+
+.home-hero {
+  padding-block: 56px 48px;
+}
+
+.hero-greeting {
+  margin-bottom: 40px;
+}
+
+.hero-greeting h1 {
+  font-size: 36px;
+  margin-bottom: 6px;
+}
+
+.hero-sub {
+  color: var(--ink-soft);
+  font-size: 16px;
+}
+
+
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.home-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--color2);
+  border: 2px solid var(--color3);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  text-decoration: none;
+  color: var(--color3);
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-card:hover {
+  background: var(--color1);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  text-decoration: none;
+}
+
+.home-card-icon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.home-card h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.home-card p {
+  color: var(--ink-soft);
+  font-size: 14px;
+  flex: 1;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.home-card:hover p {
+  color: rgba(0,0,0,0.65);
+}
+
+.home-card-cta {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+@media (max-width: 800px) {
+  .home-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .hero-greeting h1 { font-size: 28px; }
+}

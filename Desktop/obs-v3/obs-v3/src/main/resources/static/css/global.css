@@ -1,0 +1,260 @@
+/* ============================================================
+   global.css — Observa Ação
+   Reset, variáveis de cor, tipografia e componentes reutilizáveis.
+   Todas as páginas importam este arquivo ANTES do CSS específico.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --color1: #d1e751; /* Vibrant Lime/Yellow Accent */
+  --color2: #ffffff; /* Clean White Backgrounds/Cards */
+  --color3: #000000; /* Crisp Dark Text/Borders */
+  --color4: #4dbce9; /* Soft Cyan Secondary Accent */
+  --color5: #26ade4; /* Vibrant Blue Accent */
+
+  /* Derivados (mantêm a paleta, apenas em transparência) */
+  --ink-soft: rgba(0, 0, 0, 0.55);
+  --line: rgba(0, 0, 0, 0.12);
+  --lime-soft: rgba(209, 231, 81, 0.25);
+  --cyan-soft: rgba(77, 188, 233, 0.15);
+
+  --radius: 10px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ---------- Reset moderno ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color3);
+  background: var(--color2);
+  min-height: 100vh;
+}
+img, svg { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: var(--color5); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { list-style: none; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible { outline: 3px solid var(--color4); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* ---------- Containers ---------- */
+.container { width: min(1120px, 100% - 48px); margin-inline: auto; }
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border: 2px solid var(--color3);
+  border-radius: var(--radius);
+  background: var(--color2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn:hover { background: var(--lime-soft); }
+.btn-primary { background: var(--color1); }
+.btn-primary:hover { background: var(--color3); color: var(--color1); }
+.btn-blue { background: var(--color5); border-color: var(--color5); color: var(--color2); }
+.btn-blue:hover { background: var(--color3); border-color: var(--color3); }
+.btn-danger { border-color: var(--color3); }
+.btn-danger:hover { background: var(--color3); color: var(--color2); }
+.btn-sm { padding: 6px 14px; font-size: 13px; }
+.btn-block { width: 100%; }
+
+/* ---------- Formulários ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.field label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.field input, .field select, .field textarea {
+  padding: 11px 14px;
+  border: 2px solid var(--color3);
+  border-radius: var(--radius);
+  background: var(--color2);
+  transition: border-color 0.2s ease;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--color5);
+  outline: none;
+}
+.field textarea { resize: vertical; min-height: 96px; }
+.field .hint { font-size: 12px; color: var(--ink-soft); }
+
+.form-msg { font-size: 13px; margin-top: 12px; min-height: 18px; }
+.form-msg.error { color: var(--color3); background: var(--lime-soft); padding: 8px 12px; border-radius: var(--radius); }
+.form-msg.ok { color: var(--color5); font-weight: 600; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--color2);
+  border: 2px solid var(--color3);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.card-hover { cursor: pointer; transition: background-color 0.2s ease; }
+.card-hover:hover { background: var(--cyan-soft); }
+
+/* ---------- Header de navegação ---------- */
+.app-header {
+  border-bottom: 2px solid var(--color3);
+  background: var(--color2);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.app-header .header-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 64px;
+}
+.brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.brand .dot { color: transparent; -webkit-text-stroke: 1.5px var(--color3); background: var(--color1); padding: 0 4px; border-radius: 4px; }
+.main-nav { display: flex; gap: 4px; margin-left: 8px; }
+.main-nav a {
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  color: var(--color3);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+.main-nav a:hover { background: var(--lime-soft); text-decoration: none; }
+.main-nav a.active { background: var(--color1); }
+.header-spacer { flex: 1; }
+
+/* Avatar / dropdown de perfil */
+.profile-wrap { position: relative; }
+.avatar-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--color3);
+  background: var(--color4);
+  font-family: var(--font-display);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.avatar-btn:hover { background: var(--color1); }
+.profile-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  width: 220px;
+  background: var(--color2);
+  border: 2px solid var(--color3);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 8px;
+  display: none;
+}
+.profile-menu.open { display: block; }
+.profile-menu .menu-name {
+  padding: 8px 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 6px;
+}
+.profile-menu button {
+  width: 100%;
+  text-align: left;
+  padding: 9px 10px;
+  border: none;
+  background: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+.profile-menu button:hover { background: var(--lime-soft); }
+
+/* ---------- Modal genérico ---------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 100;
+}
+.modal-backdrop.open { display: flex; }
+.modal {
+  background: var(--color2);
+  border: 2px solid var(--color3);
+  border-radius: var(--radius);
+  width: min(560px, 100%);
+  max-height: 85vh;
+  overflow: auto;
+  padding: 28px;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.modal-close {
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.modal-close:hover { background: var(--lime-soft); }
+
+/* ---------- Badges de prioridade / status ---------- */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1.5px solid var(--color3);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.badge-ALTA  { background: var(--color1); }
+.badge-MEDIA { background: var(--color4); }
+.badge-BAIXA { background: var(--color2); }
+.badge-status { background: var(--color2); border-style: dashed; }
